@@ -1,0 +1,114 @@
+/**
+ *
+ * Custom SBX utilities. Overrides Bootstrap.
+ *
+ */
+
+/*=============================================
+=            Containers            =
+=============================================*/
+.container-lg {
+	@include make-container;
+	max-width: $lg;
+}
+
+.container-md {
+	@include make-container;
+	max-width: $md;
+}
+
+.container-sm {
+	@include make-container;
+	max-width: $sm;
+}
+
+.contained-text {
+	display: block;
+	max-width: 450px;
+}
+
+/*=====  End of Containers  ======*/
+
+// -----------------------------------------------
+// Font Awesome icons using Pseudo-elements
+// -----------------------------------------------
+// Please use this method only if you can't control the final markup of the site
+// @link https://fontawesome.com/v5.15/how-to-use/on-the-web/advanced/css-pseudo-elements
+
+.fa-custom::before {
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+// -----------------------------------------------
+// Animation Utilities
+// -----------------------------------------------
+
+.gs__reveal {
+	opacity: 0;
+	visibility: hidden;
+	will-change: transform, opacity;
+}
+
+//Animation Features
+.in-view.xflip {
+    animation: xFlip 2s ease-in-out;
+}
+.in-view.yflip {
+    animation: yFlip 2s ease-in-out;
+}
+
+
+@keyframes slideup {
+	0% { opacity: 0; transform: translate(0, 60%); }
+	100% { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes fadeInLeft {
+	0% { opacity: 0; transform: translate3d(20%, 0, 0); }
+	100% { opacity: 1; transform: none; }
+}
+@keyframes fadeOutLeft {
+	0% { opacity: 1; }
+	100% { opacity: 0; transform: translate3d(20%, 0, 0); }
+}
+@keyframes fadeInUp {
+	0% { opacity: 0; transform: translate3d(0, 50%, 0); }
+	100% { opacity: 1; transform: none; }
+}
+@keyframes fadeOutUp {
+	0% { opacity: 1; }
+	100% { opacity: 0; transform: translate3d(0, 50%, 0); }
+}
+@keyframes fadeInDown {
+	0% { opacity: 0; transform: translate3d(0, -50%, 0); }
+	100% { opacity: 1; transform: none; }
+}
+@keyframes fadeOutDown {
+	0% { opacity: 1; }
+	100% { opacity: 0; transform: translate3d(0, -50%, 0); }
+}
+
+@keyframes yFlip {
+	from   { 
+        opacity: 0; 
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); 
+    }
+	to { 
+        opacity: 1; 
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); 
+    }
+}
+
+@keyframes xFlip {
+	from   { 
+        opacity: 0; 
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); 
+    }
+	to { 
+        opacity: 1; 
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%); 
+    }
+}

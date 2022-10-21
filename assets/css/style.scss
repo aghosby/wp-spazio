@@ -1,0 +1,121 @@
+/*!
+Theme Name: wp-tsw
+Theme URI: https://starboxtech.com/
+Author: StarBox Technologies
+Author URI: https://starboxtech.com/
+Description: A custom theme developed by StarBox Technologies Ltd. for The Skin Workshop
+Version: 1.0.0
+License: LICENSE
+License URI: LICENSE
+Text Domain: wp-tsw
+Tags: sbx, starboxtech, starbox-technologies
+
+wp-tsw is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+// -----------------------------------------------
+// Project variables
+// -----------------------------------------------
+@import "./defaults/variables";
+
+// -----------------------------------------------
+// Bootstrap Styles
+// -----------------------------------------------
+
+// Full Bootstrap Import
+// @import "./vendor/bootstrap/bootstrap";
+
+// Custom Bootstrap Import
+
+// Required (Configuration)
+@import "./vendor/bootstrap/functions";
+@import "./vendor/bootstrap/variables";
+@import "./vendor/bootstrap/mixins";
+@import "./vendor/bootstrap/utilities";
+
+// Optional (Layout & components)
+// @import "./vendor/bootstrap/root";
+@import "./vendor/bootstrap/reboot";
+@import "./vendor/bootstrap/type";
+@import "./vendor/bootstrap/images";
+@import "./vendor/bootstrap/containers";
+@import "./vendor/bootstrap/grid";
+// @import "./vendor/bootstrap/tables";
+// @import "./vendor/bootstrap/forms"; // Disable if using WP forms
+@import "./vendor/bootstrap/buttons";
+@import "./vendor/bootstrap/transitions";
+// @import "./vendor/bootstrap/dropdown";
+// @import "./vendor/bootstrap/button-group";
+@import "./vendor/bootstrap/nav";
+@import "./vendor/bootstrap/navbar";
+// @import "./vendor/bootstrap/card";
+// @import "./vendor/bootstrap/accordion";
+// @import "./vendor/bootstrap/breadcrumb";
+@import "./vendor/bootstrap/pagination";
+// @import "./vendor/bootstrap/badge";
+// @import "./vendor/bootstrap/alert";
+// @import "./vendor/bootstrap/progress";
+// @import "./vendor/bootstrap/list-group";
+// @import "./vendor/bootstrap/close";
+// @import "./vendor/bootstrap/toasts";
+// @import "./vendor/bootstrap/modal";
+// @import "./vendor/bootstrap/tooltip";
+// @import "./vendor/bootstrap/popover";
+// @import "./vendor/bootstrap/carousel";
+// @import "./vendor/bootstrap/spinners";
+// @import "./vendor/bootstrap/offcanvas";
+// @import "./vendor/bootstrap/helpers"; // Helpers
+@import "./vendor/bootstrap/utilities/api"; // Utilities
+
+// -----------------------------------------------
+// Required partials for WordPress
+// -----------------------------------------------
+@import "./defaults/wordpress";
+@import "./defaults/forms";
+
+// -----------------------------------------------
+// Default SBX partials
+// -----------------------------------------------
+@import "./defaults/mixins";
+@import "./defaults/utilities";
+@import "./defaults/base";
+@import "./defaults/typography";
+
+// -----------------------------------------------
+// Import vendor libraries
+// -----------------------------------------------
+
+// Font Awesome Pro 5.13.0
+@import "./vendor/fontawesome/fontawesome"; // main fa compile
+// @import "./vendor/fontawesome/solid"; // optional - solid style
+// @import "./vendor/fontawesome/regular"; // optional - regular style
+@import "./vendor/fontawesome/light"; // optional - light style
+// @import "./vendor/fontawesome/duotone"; // optional - duotone style
+@import "./vendor/fontawesome/brands"; // optional - brands style
+
+// @import "./libraries/intlTelInput";
+// @import "./libraries/floating-wpp";
+
+// -----------------------------------------------
+// Header & Footer Partials
+// -----------------------------------------------
+@import "./includes/header";
+@import "./includes/footer";
+
+// -----------------------------------------------
+// WooCommerce
+// -----------------------------------------------
+// @import "./woocommerce/sbx_woo";
+
+// -----------------------------------------------
+// Page partials
+// -----------------------------------------------
+@import "./pages/home";
+@import "./pages/about";
+@import "./pages/contact";
+@import "./pages/blog";
+@import "./pages/projects";

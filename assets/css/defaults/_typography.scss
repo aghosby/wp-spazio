@@ -1,0 +1,69 @@
+// Name:            typography.scss
+// Description:     Styles related to text, paragraphs,
+//                  fonts etc. are stored here
+//
+// -----------------------------------------------
+
+// Headings
+
+@font-face {
+	font-family: 'NM';
+	src: url('../fonts/custom/Noir-Medium.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'NR';
+	src: url('../fonts/custom/Noir-Regular.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'AB';
+	src: url('../fonts/custom/Arial-Black.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+h1,
+.h1 {
+	font-family: $font-heading;
+	font-size: 2.5rem;
+	line-height: 1.286;
+	@include sbx-media-min(sm) {
+		font-size: 3.5rem;
+	}
+}
+
+h2,
+.h2 {
+	font-family: $font-heading;
+	font-size: 2rem;
+	line-height: 1.275;
+	@include sbx-media-min(sm) {
+		font-size: 2.5rem;
+	}
+}
+
+h3,
+.h3 {
+	font-family: $font-heading;
+	font-size: 1.375rem;
+	line-height: 1.25;
+	@include sbx-media-min(sm) {
+		font-size: 1.5rem;
+	}
+}
+
+h4,
+.h4 {
+	font-family: $font-primary;
+	font-weight: $font-bold;
+	font-size: 1rem;
+	line-height: 1.2;
+	@include sbx-media-min(sm) {
+		font-size: 1.25rem;
+	}
+}

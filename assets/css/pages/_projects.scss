@@ -1,0 +1,108 @@
+
+.gallery-wrap {
+    overflow: hidden;
+
+    .gallery-cont {
+        display: flex;
+        gap: 2%;
+        margin: 5vh 0;
+        position: relative;
+        animation: scrolling 40s linear infinite;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+
+            img {
+                width: auto;
+                height: 20vh;
+                box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+
+                @include sbx-media-min(md) {
+                    height: 35vh;
+                }
+            }
+        } 
+
+        .fancybox-caption__body {
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+    }
+}
+
+.project-info {
+    width: calc(100% - 2.8rem);
+    height: auto;
+    padding: 4vh 1.8rem;
+    background-color: $black;
+    position: absolute;
+    bottom: 1.4rem;
+    right: 1.4rem;
+    color: $white;
+
+    @include sbx-media-min(md) {
+        width: 60%;
+        bottom: 0;
+        right: 10%;
+    }
+
+    @include sbx-media-min(lg) {
+        width: 60%;
+        bottom: 0;
+        right: 10%;
+    }
+
+    @include sbx-media-min(xl) {
+        width: 40%;
+        right: 10%;
+    }
+
+    .project {
+
+        &-name {
+            font-size: 0.95rem;
+            font-family: $font-heading;
+            letter-spacing: 0.05rem;
+
+            @include sbx-media-min(md) {
+                font-size: 1.1rem;
+            }
+        }
+
+        &-summary {
+            font-size: 0.75rem;
+            line-height: 1.5;
+            letter-spacing: 0.05rem;
+            margin-top: 0.4rem;
+
+            @include sbx-media-min(md) {
+                font-size: 0.85rem;
+                letter-spacing: 0.04rem;
+            }
+        }
+
+        &-details {
+            display: flex;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            letter-spacing: 0.06rem;
+            margin-top: 0.4rem;
+            gap: 15px;
+
+            @include sbx-media-min(md) {
+                font-size: 0.85rem;
+                letter-spacing: 0.04rem;
+            }
+
+            span {
+                color: $text-lightest;
+                margin-right: 0.3rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,264 @@
+/**
+ *
+ * Styles related to the footer section go here
+ *
+*/
+
+
+.footer {
+	color: $text-light;
+	text-align: center;
+	padding: 4rem 0;
+
+	@include sbx-media-min(md) {
+		padding: 5rem 0 5rem;
+		text-align: left;
+	}
+
+	.coy-brief {
+		width: 100%;
+		font-size: 0.85rem;
+		text-align: center;
+		letter-spacing: 0.04rem;
+		line-height: 1.6;
+
+		@include sbx-media-min(md) {
+			width: 70%;
+			text-align: left;
+		}
+	}
+
+	.copyright {
+		font-size: 0.8rem;
+		margin-top: 2rem;
+		visibility: hidden;
+		letter-spacing: 0.05rem;
+
+		@include sbx-media-min(lg) {
+			visibility: visible;
+		}
+	}
+
+	a {
+		font-size: 0.85rem;
+		letter-spacing: 0.04rem;
+		width: fit-content;
+		display: inline-block;
+		color: $text-light;
+		text-decoration: none;
+		transition: all $transition-normal;
+
+		&:hover,
+		&:focus,
+		&:active,
+		&.active {
+			color: $primary;
+		}
+	}
+
+	&__h4 {
+		font-size: 0.85rem;
+        font-family: 'NM';
+        letter-spacing: 0.07rem;
+		text-transform: uppercase;
+		color: $text-dark;
+		margin-bottom: 1rem;
+	}
+
+	&__h3 {
+		font-size: 1.5rem;
+		color: $secondary;
+		margin-bottom: 0.75rem;
+	}
+
+	&__logo {
+        width: auto;
+
+		.brand-image {
+			width: auto;
+			height: 1.85rem;
+
+			img {
+				width: auto;
+				height: 100%;
+			}
+		}
+	}
+
+	&__menu {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 2rem;
+		list-style-type: none;
+		padding: 0;
+
+		.menu-item {
+			width: 32%;
+			display: inline-block;
+			font-size: 0.9rem;
+            letter-spacing: 0.03rem;
+			padding: 0.4rem 0;
+
+			@include sbx-media-min(md) {
+				width: 47%;
+			}
+		}
+	}
+
+	&__menu--legal {
+		margin: 0;
+		.menu-item {
+			display: inline-block;
+			padding: 0.5rem;
+		}
+	}
+
+	&__middle {
+		position: relative; // for the #scroll-to-top
+	}
+
+	&__contact {
+		display: flex;
+		padding: 0.4rem 0;
+        font-size: 0.9rem;
+		justify-content: center;
+        letter-spacing: 0.03rem;
+
+		@include sbx-media-min(md) {
+			justify-content: flex-start;
+		}
+
+		&-icon {
+			margin-right: 1rem;
+			color: $secondary;
+		}
+
+        .footer-address {
+			font-size: 0.85rem;
+			letter-spacing: 0.04rem;
+            margin-bottom: 0;
+        }
+	}
+
+	.social-icons {
+		margin: 1rem 0 0;
+        
+		a {
+			font-size: 1rem;
+			padding: 0.3rem;
+			color: $secondary;
+			margin: 0;
+			transition: color $transition-normal;
+			color: $text-dark;
+
+			&:hover,
+			&:focus,
+			&:active,
+			&.active {
+				color: $primary;
+			}
+		}
+	}
+
+    .cta-form {
+        display: flex;
+        align-items: center;
+        margin-top: 0.4rem;
+        padding: 0.8rem 5%;
+        border-radius: 8px;
+        background-color: $white;
+        box-shadow: rgba(12, 17, 66, 0.24) 0px 4px 24px;
+
+        label {
+            color: $primary;
+            font-size: 1.1rem;
+        }
+
+        input {
+            width: fit-content;
+            flex: 1;
+            padding-left: 5%;
+            letter-spacing: 0.02rem;
+            background-color: $white;
+            outline: none;
+            color: $dark;
+            border: none;
+
+            &::placeholder {
+                color: $dark;
+                letter-spacing: 0.02rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        button {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            color: $primary;
+        }
+    }
+
+	&__bottom {
+		display: block;
+
+		@include sbx-media-min(lg) {
+			display: none;
+		}
+
+        .footer__summary {
+            font-size: 0.85rem;
+            letter-spacing: 0.04rem;
+            display: flex;
+			flex-direction: column;
+			justify-content: center;
+            padding: 1rem 0 0;
+            //border-top: 1px solid rgba(0, 0, 0, 0.1);
+			@include sbx-media-min(md) {
+				align-items: flex-start;
+			}
+
+			@include sbx-media-min(lg) {
+				align-items: center;
+			}
+
+            .footer__legal {
+                display: flex;
+                list-style-type: none;
+                margin-left: 0;
+                margin-bottom: 0;
+                padding: 0;
+                gap: 1rem;
+
+                .menu-item {
+                    font-size: 0.85rem;
+                    letter-spacing: 0.03rem;
+                    text-decoration: underline;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+
+            a {
+                color: $secondary;
+                white-space: nowrap;
+                letter-spacing: 0.04rem;
+
+                &:hover,
+                &:focus,
+                &:active,
+                &.active {
+                    color: $primary;
+                }
+            }
+
+            .marketing {
+                margin-left: 0;
+				margin-top: 0.4rem;
+            }
+        }
+        
+	}
+
+}
+

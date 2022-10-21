@@ -1,0 +1,306 @@
+/**
+ *
+ * All SCSS styles related to the contact page
+ *
+ */
+
+/**
+ *
+ * SBX Contact Form 1 styled from scratch with Flexbox and CSS columns.
+ *
+ */
+
+.sbx-contact-form-1 {
+	// Style confirmation message
+	.wpforms-confirmation-container {
+		margin: 2rem 0;
+		padding: 0.125rem 0.75rem;
+		text-align: center;
+	}
+
+	// Style contact form
+	form {
+		.wpforms-field-container {
+			// Form layout
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 0 0.5rem;
+			text-align: left;
+
+			ul {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+				li {
+					display: inline-block;
+					padding: 0.25rem 2rem 0.25rem 0;
+				}
+			}
+
+			.sbx-form-control,
+			.sbx-checkbox-container,
+			.sbx-radio-container {
+				width: 100%;
+				margin: 0.75rem 0;
+				input,
+				textarea {
+					width: 100%;
+				}
+
+				&.sbx-form-control-half {
+					@include sbx-media-min(md) {
+						width: 49%;
+					}
+				}
+
+				&.sbx-form-control-one-third {
+					@include sbx-media-min(md) {
+						width: 31.5%;
+					}
+				}
+			}
+
+			// Custom checkboxes
+			.sbx-checkbox-container ul li {
+				label {
+					position: relative;
+					min-height: 2rem;
+					display: block;
+					padding-left: 2rem;
+					margin-bottom: 0;
+					cursor: pointer;
+					line-height: 1.75rem;
+
+					&:before {
+						content: "";
+						position: absolute;
+						left: 0;
+						top: 0;
+						margin: 5px;
+						width: 18px;
+						height: 18px;
+						transition: transform 0.28s ease;
+						border: 1px solid lighten($dark, 50%);
+					}
+					&:after {
+						content: "";
+						display: block;
+						width: 10px;
+						height: 5px;
+						border-bottom: 2px solid $primary;
+						border-left: 2px solid $primary;
+						transform: rotate(-45deg) scale(0);
+						transition: transform ease 0.25s;
+						position: absolute;
+						top: 11px;
+						left: 9px;
+					}
+				}
+				input[type="checkbox"] {
+					width: auto;
+					opacity: 0.00000001;
+					position: absolute;
+					left: 0;
+					margin-left: -20px;
+					&:checked ~ label {
+						&:before {
+							border: 1px solid lighten($dark, 50%);
+						}
+						&:after {
+							transform: rotate(-45deg) scale(1);
+						}
+					}
+					&:focus + label::before {
+						outline: 0;
+					}
+				}
+				input[type="radio"] {
+					width: auto;
+					opacity: 0.00000001;
+					position: absolute;
+					left: 0;
+					margin-left: -20px;
+					&:checked ~ label {
+						&:before {
+							border: 1px solid lighten($dark, 50%);
+						}
+						&:after {
+							transform: rotate(-45deg) scale(1);
+						}
+					}
+					&:focus + label::before {
+						outline: 0;
+					}
+				}
+			}
+
+			// Custom Radio
+			.sbx-radio-container ul li {
+				[type="radio"]:checked,
+				[type="radio"]:not(:checked) {
+					position: absolute;
+					left: -9999px;
+				}
+				[type="radio"]:checked + label,
+				[type="radio"]:not(:checked) + label {
+					position: relative;
+					padding-left: 28px;
+					cursor: pointer;
+					line-height: 20px;
+					display: inline-block;
+					color: lighten($dark, 50%);
+				}
+				[type="radio"]:checked + label:before,
+				[type="radio"]:not(:checked) + label:before {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 18px;
+					height: 18px;
+					border: 1px solid lighten($dark, 50%);
+					border-radius: 100%;
+					background: $white;
+				}
+				[type="radio"]:checked + label:before {
+					border: 1px solid $primary;
+				}
+				[type="radio"]:checked + label:after,
+				[type="radio"]:not(:checked) + label:after {
+					content: "";
+					width: 12px;
+					height: 12px;
+					background: $primary;
+					position: absolute;
+					top: 3px;
+					left: 3px;
+					border-radius: 100%;
+					-webkit-transition: all 0.2s ease;
+					transition: all 0.2s ease;
+				}
+				[type="radio"]:not(:checked) + label:after {
+					opacity: 0;
+					-webkit-transform: scale(0);
+					transform: scale(0);
+				}
+				[type="radio"]:checked + label:after {
+					opacity: 1;
+					-webkit-transform: scale(1);
+					transform: scale(1);
+				}
+			}
+
+			// Form theme
+			.sbx-form-control {
+				// Input, textarea and select styles
+				input,
+				textarea,
+				&.sbx-select-container .choices__inner {
+					background-color: #f5f5f5;
+					border: 1px solid #f5f5f5;
+					color: $dark;
+					border-radius: 0.5rem;
+					padding: 15px;
+					font-size: 1rem;
+
+					&::placeholder {
+						color: lighten($dark, 50%);
+						font-weight: $font-light;
+						font-size: 0.875rem;
+						text-transform: uppercase;
+						letter-spacing: 0.25rem;
+					}
+				}
+
+				// Match height of input and text area
+				&.sbx-select-container .choices__inner {
+					padding: 11px;
+				}
+
+				textarea {
+					height: 180px;
+				}
+
+				// Required indicators
+				.wpforms-field-label {
+					.wpforms-required-label {
+						color: $primary;
+					}
+				}
+
+				// Style error messages in form control
+				.wpforms-error {
+					color: $danger;
+					font-size: 0.875rem;
+					font-style: italic;
+				}
+			}
+
+			// Reset WP Forms default select typography styling
+			.sbx-select-container .choices__list {
+				font-weight: normal;
+				font-size: 1rem;
+				& .choices__placeholder {
+					opacity: 1;
+					color: lighten($dark, 50%);
+					font-style: italic;
+				}
+			}
+
+			// Styling for legal text
+			.sbx-legal-text {
+				font-size: 0.8125rem;
+				font-weight: $font-light;
+				color: lighten($dark, 40%);
+
+				// Style error messages in legal text
+				.wpforms-error {
+					color: $danger;
+					font-size: 0.875rem;
+					font-style: italic;
+				}
+			}
+
+			// Styling for field limit text
+			.wpforms-field-limit-text {
+				@extend .sbx-legal-text;
+			}
+		}
+
+		// Submit button (Inherit theme styles)
+		.sbx-contact-form-btn {
+			// margin: 1.5rem 0.5rem;
+			@extend .btn;
+			@extend .btn-primary;
+			width: 100%;
+		}
+
+		// Align submit button
+		.wpforms-submit-container {
+			display: flex;
+			justify-content: center;
+		}
+
+		// Hide WP Forms functional element
+		.wpforms-field.wpforms-field-hp {
+			display: none;
+		}
+
+		// Using a checkbox field as custom text field
+		.sbx-checkbox-replace ul {
+			display: none;
+		}
+
+		// Hide required asterisk for surname field
+		// #wpforms-175-field_12-container .wpforms-required-label {
+		// 	visibility: hidden;
+		// }
+
+		// Hide labels
+		label.wpforms-field-label,
+		.wpforms-field-label.wpforms-label-hide {
+			display: none;
+		}
+	}
+}

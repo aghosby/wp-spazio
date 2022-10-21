@@ -1,0 +1,142 @@
+/**
+ *
+ * The variables.scss file contains default style variables for
+ * the project theme and also for overriding Bootstrap.
+ *
+ */
+
+// -----------------------------------------------
+// Theme fonts
+// -----------------------------------------------
+$font-primary: "NR", Arial, sans-serif;
+$font-heading: "NM", Arial, sans-serif;
+$font-title: "AB", Arial, serif;
+$font-thin: 100;
+$font-extralight: 200;
+$font-light: 300;
+$font-regular: 400; // ✅
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700; // ✅
+$font-extrabold: 800;
+
+// -----------------------------------------------
+//  Theme colours
+// -----------------------------------------------
+
+// To prevent SCSS compile errors when importing
+// components, ensure that all colour variations
+// have been assigned a HEX code. This can be the
+// main color code (e.g. $primary) or a generic
+// HEX value (e.g. #000).
+
+// Primary colours
+$primary: #fbc615;;
+$primary-light: #e09df1;
+$primary-dark: #720a8c;
+
+// Secondary colours
+$secondary: #2e2e2e;
+$secondary-light: #e5e5e5;
+$secondary-dark: $secondary;
+
+// Neutral colours
+$light: $secondary-light;
+$lighter: $light;
+$white: #ffffff;
+
+$dark: #2c222f;
+$darker: $dark;
+$black: #000000;
+
+$muted: #707070;
+
+$text-dark: #121212;
+$text-mid: #757576;
+$text-light: #949494;
+$text-lightest: #c4c4c4;
+
+$bkg-normal: #f4f4f4;
+$bkg-dark: #d6d6d6;
+
+$border-normal: #eaeaea;
+
+// Override default Bootstrap UI colours
+// $success: #198754;
+// $info: #0dcaf0;
+// $warning: #ffc107;
+// $danger: #dc3545;
+// $gray-100: #f8f9fa;
+// $gray-200: #e9ecef;
+// $gray-300: #dee2e6;
+// $gray-400: #ced4da;
+// $gray-500: #adb5bd;
+// $gray-600: #6c757d;
+// $gray-700: #495057;
+// $gray-800: #343a40;
+// $gray-900: #212529;
+
+// -----------------------------------------------
+// Component settings
+// -----------------------------------------------
+
+// Button styles
+
+// $btn-border-width: 2px;                 // Button border width
+$btn-border-radius: 0px; // Button border radius
+$btn-padding-y: 9px; // Button padding top & bottom
+$btn-padding-x: 18px; // Button padding left & :right
+// $btn-font-family: $font-primary;        // Button font family
+// $btn-font-weight: $font-regular;        // Button font weight
+// $btn-font-size: 1rem;                   // Button font size
+
+// Sets padding and margin spacing increment to 1rem
+// e.g. pt-5 = padding-top: 5rem;
+$spacer: 1rem;
+$spacers: (
+	0: 0,
+);
+@for $i from 1 through 10 {
+	$spacers: map-merge(
+		$spacers,
+		(
+			$i: (
+				$i * $spacer,
+			),
+		)
+	);
+}
+
+// Link styles
+$underline-thickness: 0.15rem;
+$underline-offset: 0.4rem;
+
+// -----------------------------------------------
+// Animation
+// -----------------------------------------------
+$transition-fast: 0.2s;
+$transition-normal: 0.4s;
+$transition-slow: 0.6s;
+
+// Transitions
+$transition-fast: 0.2s;
+$transition-normal: 0.4s;
+$transition-slow: 0.6s;
+
+// -----------------------------------------------
+// Gradients
+// -----------------------------------------------
+
+// Place gradient variables here
+
+// -----------------------------------------------
+// Other settings
+// -----------------------------------------------
+
+// Breakpoints
+$xs: 375px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;

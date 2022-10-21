@@ -1,0 +1,269 @@
+
+/**
+ *
+ * All SCSS styles related to the about page
+ *
+*/
+
+.about {
+    padding: 5rem 0;
+
+    @include sbx-media-max(md) {
+        padding: 4rem 0 3.5rem;
+    }
+}
+
+.pillar__wrap {
+    margin-top: 3rem;
+
+    @include sbx-media-min(md) {
+        margin-top: 5rem;
+    }
+
+    .pillar__hld {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include sbx-media-min(md) {
+            flex-direction: row-reverse;
+        }
+
+        &:nth-child(2n) {
+            flex-direction: column;
+
+            @include sbx-media-min(md) {
+                flex-direction: row;
+            }
+
+            .info {
+                text-align: left;
+            }
+        }
+
+        &:nth-child(n+2) {
+            margin-top: 2.5rem;
+
+            @include sbx-media-min(md) {
+                margin-top: 7rem;
+            }
+        }
+
+        .info {
+            width: 100%;
+            text-align: left;
+
+            @include sbx-media-min(md) {
+                width: 48%;
+                text-align: right;
+            }
+
+            .count {
+                display: none;
+                font-size: 0.85rem;
+                font-family: $font-heading;
+                letter-spacing: 0.05rem;
+                margin-bottom: 0.4rem;
+                color: $text-mid;
+
+                @include sbx-media-min(md) {
+                    display: block;
+                }
+            }
+
+            .title {
+                font-size: 1.4rem;
+                font-family: $font-heading;
+                letter-spacing: 0.05rem;
+                margin-top: 1rem;
+                margin-bottom: 0.1rem;
+                color: $secondary;
+
+                @include sbx-media-min(md) {
+                    margin-top: 0;
+                }
+            }
+
+            .preamble {
+                font-size: 1rem;
+                letter-spacing: 0.04rem;
+                margin-bottom: 0rem;
+
+                @include sbx-media-min(md) {
+                    margin-bottom: 0.4rem;
+                }
+            }
+        }
+
+        .photo {
+            width: 100%;
+            height: 25rem;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            @include sbx-media-min(md) {
+                width: 48%;
+                height: 35rem;
+            }
+        }
+    }
+}
+
+.team {
+    padding: 5rem 0;
+
+    @include sbx-media-max(md) {
+        padding: 4rem 0;
+    }
+
+    .team__wrap {
+        display: flex;
+        margin-top: 2.5rem;
+        flex-wrap: wrap;
+
+        @include sbx-media-min(md) {
+            margin-top: 4rem;
+        }
+
+        .team__hld {
+            width: 46%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @include sbx-media-min(md) {
+                width: 32%;
+
+                &:nth-child(3) {
+                    margin-top: 0 !important;
+                }
+
+                &:nth-child(n+4) {
+                    margin-top: 2rem;
+                }
+            }
+
+            @include sbx-media-min(lg) {
+                width: 25%;
+
+                &:nth-child(4) {
+                    margin-top: 0 !important;
+                }
+
+                &:nth-child(n+5) {
+                    margin-top: 3rem;
+                }
+            }
+
+            &:nth-child(n+3) {
+                margin-top: 1.8rem;
+
+                @include sbx-media-min(md) {
+                    margin-top: 2rem;
+                }
+
+                @include sbx-media-min(lg) {
+                    margin-top: 3rem;
+                }
+            }
+
+            .photo {
+                width: 8rem;
+                height: 8rem;
+                border-radius: 50%;
+                background-size: cover;
+                background-position: top center;
+                background-repeat: no-repeat;
+
+                @include sbx-media-min(md) {
+                    width: 9rem;
+                    height: 9rem;
+                }
+
+                @include sbx-media-min(lg) {
+                    width: 10.5rem;
+                    height: 10.5rem;
+                }
+            }
+
+            .name {
+                font-size: 0.9rem;
+                letter-spacing: 0.03rem;
+                font-family: $font-heading;
+                margin: 0.5rem 0 0rem;
+                color: $secondary;
+
+                @include sbx-media-min(md) {
+                    font-size: 1rem;
+                }
+            }
+
+            .role {
+                font-size: 0.7rem;
+                letter-spacing: 0.04rem;
+                color: $text-mid;
+
+                @include sbx-media-min(md) {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+.service-areas {
+    padding: 5rem 0;
+
+    @include sbx-media-max(md) {
+        padding: 4rem 0;
+    }
+}
+
+.c-sec {
+    padding: 4rem 0;
+
+    @include sbx-media-max(md) {
+		padding: 2rem 0 4rem;
+	}
+
+    .details {
+        padding-left: 1.8rem;
+    }
+
+    .main {
+        width: 100%;
+        height: auto;
+    }
+
+    .sign {
+        width: auto;
+        height: 3.5rem;
+        margin: 1rem 0;
+
+        @include sbx-media-min(md) {
+            height: 5rem;
+        }
+    }
+
+    .name {
+        font-size: 0.9rem;
+        font-family: $font-heading;
+        letter-spacing: 0.04rem;
+
+        @include sbx-media-min(md) {
+           font-size: 1.2rem;
+        }
+    }
+    .role {
+        font-size: 0.8rem;
+        font-family: $font-primary;
+        letter-spacing: 0.03rem;
+
+        @include sbx-media-min(md) {
+            font-size: 0.9rem;
+        }
+    }
+}
